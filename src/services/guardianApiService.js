@@ -1,4 +1,4 @@
-const GUARDIAN_KEY = "17271594-6aab-4612-87ff-4f9155717347";
+const GUARDIAN_KEY = import.meta.env.VITE_GUARDIAN_KEY;
 
 const normalizeTheGuardian = (results = []) => {
   return results.map((article) => ({

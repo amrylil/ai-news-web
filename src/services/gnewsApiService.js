@@ -1,4 +1,4 @@
-const GNEWS_KEY = "ffe477bc4f1230e981c93697aeb167cc";
+const GNEWS_KEY = import.meta.env.VITE_GNEWS_KEY;
 
 const normalizeGNews = (articles = []) => {
   return articles.map((article) => ({

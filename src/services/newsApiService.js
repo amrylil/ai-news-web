@@ -1,4 +1,4 @@
-const NEWSAPI_KEY = "571f3604c7ec46518bbe9ec021e6d468";
+const NEWSAPI_KEY = import.meta.env.VITE_NEWSAPI_KEY;
 
 const normalizeNewsAPI = (articles = []) => {
   return articles.map((article) => ({
