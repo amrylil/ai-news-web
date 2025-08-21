@@ -27,15 +27,13 @@ export const TrendingCard = ({ article, size, index }) => {
 
   return (
     <Link
-      to={`/article/${articleId}`} // 👈 arahkan ke halaman detail artikel
+      to={`/article/${articleId}`}
       className={`group relative overflow-hidden rounded-xl bg-gray-100 block ${getCardHeight()}`}
     >
       <img
         src={
           article.image ||
-          `https://images.unsplash.com/photo-${
-            1500000000000 + index
-          }?w=800&h=600&fit=crop`
+          `https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&h=600&fit=crop`
         }
         alt={article.title}
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

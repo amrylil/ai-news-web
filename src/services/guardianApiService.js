@@ -5,7 +5,7 @@ const normalizeTheGuardian = (results = []) => {
     id: article.webUrl,
     title: article.webTitle,
     url: article.webUrl,
-    image: article.urlToImage,
+    image: article.webUrl,
     timestamp: article.webPublicationDate,
     source: "The Guardian",
   }));
@@ -17,6 +17,7 @@ export const fetchFromTheGuardian = async (keyword) => {
       `https://content.guardianapis.com/search?q=${keyword}&api-key=${GUARDIAN_KEY}`
     );
     const data = await response.json();
+    console.log("guardiannnnn : ", data);
     if (data.response.status !== "ok")
       throw new Error("Failed to fetch from The Guardian");
     return normalizeTheGuardian(data.response.results);
