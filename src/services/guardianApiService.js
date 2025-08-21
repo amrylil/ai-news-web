@@ -5,7 +5,7 @@ const normalizeTheGuardian = (results = []) => {
     id: article.webUrl,
     title: article.webTitle,
     url: article.webUrl,
-    image: article.webUrl,
+    image: article.urlToImage,
     timestamp: article.webPublicationDate,
     source: "The Guardian",
   }));

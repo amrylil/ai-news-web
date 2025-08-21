@@ -1,5 +1,6 @@
 import { fetchFromGNews } from "./gnewsApiService";
 import { fetchFromTheGuardian } from "./guardianApiService";
+import { fetchFromMediastack } from "./mediaStackApiService";
 import { fetchFromNewsAPI } from "./newsApiService";
 import { fetchFromSpaceflightNews } from "./spaceflightApiService";
 
@@ -11,8 +12,9 @@ export const fetchAllNews = async (keyword = SEARCH_KEYWORD) => {
   const promises = [
     // fetchFromGNews(keyword),
     fetchFromTheGuardian(keyword),
-    fetchFromNewsAPI(keyword),
+    // fetchFromNewsAPI(keyword),
     fetchFromSpaceflightNews(keyword),
+    fetchFromMediastack(keyword),
   ];
 
   const results = await Promise.allSettled(promises);
