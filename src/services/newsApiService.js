@@ -17,7 +17,6 @@ export const fetchFromNewsAPI = async (keyword) => {
       `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${NEWSAPI_KEY}`
     );
     const data = await response.json();
-    console.log("news api : ", data);
     if (data.status !== "ok") throw new Error(data.message);
     return normalizeNewsAPI(data.articles);
   } catch (error) {

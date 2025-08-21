@@ -1,6 +1,7 @@
 import { fetchFromGNews } from "./gnewsApiService";
 import { fetchFromTheGuardian } from "./guardianApiService";
 import { fetchFromNewsAPI } from "./newsApiService";
+import { fetchFromSpaceflightNews } from "./spaceflightApiService";
 
 const SEARCH_KEYWORD = "artificial intelligence";
 
@@ -11,6 +12,7 @@ export const fetchAllNews = async (keyword = SEARCH_KEYWORD) => {
     // fetchFromGNews(keyword),
     fetchFromTheGuardian(keyword),
     fetchFromNewsAPI(keyword),
+    fetchFromSpaceflightNews(keyword),
   ];
 
   const results = await Promise.allSettled(promises);

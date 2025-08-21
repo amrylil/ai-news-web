@@ -5,7 +5,7 @@ const normalizeGNews = (articles = []) => {
     id: article.url,
     title: article.title,
     url: article.url,
-    image: article.urlToImage,
+    image: article.image,
     timestamp: article.publishedAt,
     source: `GNews`,
   }));
@@ -17,7 +17,6 @@ export const fetchFromGNews = async (keyword) => {
       `https://gnews.io/api/v4/search?q=${keyword}&lang=en&token=${GNEWS_KEY}`
     );
     const data = await response.json();
-    console.log("gnews api : ", data);
     if (data.errors) throw new Error(data.errors.join(", "));
     return normalizeGNews(data.articles);
   } catch (error) {

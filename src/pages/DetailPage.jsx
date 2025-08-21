@@ -1,5 +1,3 @@
-// src/pages/DetailPage.jsx
-
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, useOutletContext } from "react-router-dom";
 
@@ -103,11 +101,9 @@ const DetailPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
-      {/* Hero gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/30 pointer-events-none"></div>
 
       <main className="relative max-w-7xl mx-auto p-4 md:p-6 lg:p-8">
-        {/* Back button with modern styling */}
         <button
           onClick={() => navigate(-1)}
           className="group mb-8 inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm hover:bg-white border border-gray-200/60 hover:border-blue-200 text-gray-700 hover:text-blue-600 font-medium py-3 px-5 transition-all duration-300 shadow-sm hover:shadow-md"
@@ -183,7 +179,6 @@ const DetailPage = () => {
             </div>
           </div>
 
-          {/* Featured image */}
           <figure className="relative overflow-hidden">
             <img
               src={
@@ -196,7 +191,6 @@ const DetailPage = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
           </figure>
 
-          {/* Content section */}
           <div className="p-6 md:p-8 lg:p-10">
             <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
               <p className="text-xl leading-relaxed text-gray-800 font-medium">

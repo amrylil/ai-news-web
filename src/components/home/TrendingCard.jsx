@@ -1,4 +1,8 @@
+import { Link } from "react-router-dom";
+
 export const TrendingCard = ({ article, size, index }) => {
+  const articleId = encodeURIComponent(article.id);
+
   const getCardHeight = () => {
     switch (size) {
       case "large":
@@ -22,8 +26,9 @@ export const TrendingCard = ({ article, size, index }) => {
   };
 
   return (
-    <div
-      className={`group relative overflow-hidden rounded-xl bg-gray-100 ${getCardHeight()}`}
+    <Link
+      to={`/article/${articleId}`} // 👈 arahkan ke halaman detail artikel
+      className={`group relative overflow-hidden rounded-xl bg-gray-100 block ${getCardHeight()}`}
     >
       <img
         src={
@@ -60,7 +65,7 @@ export const TrendingCard = ({ article, size, index }) => {
         <div className="flex items-center justify-between text-xs text-gray-300">
           <span className="flex items-center gap-2">
             <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-            {new Date(article.publishedAt).toLocaleDateString()}
+            {new Date(article.timestamp).toLocaleDateString()}
           </span>
           {size === "large" && (
             <span className="flex items-center gap-1">
@@ -79,6 +84,6 @@ export const TrendingCard = ({ article, size, index }) => {
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-    </div>
+    </Link>
   );
 };

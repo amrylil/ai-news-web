@@ -133,7 +133,6 @@ const HomePage = () => {
                 </SwiperSlide>
               ))}
 
-              {/* Custom Navigation */}
               <div className="swiper-button-prev !text-white !w-12 !h-12 !mt-0 !top-1/2 !left-4 bg-black/30 rounded-full backdrop-blur-sm hover:bg-black/50 transition-colors"></div>
               <div className="swiper-button-next !text-white !w-12 !h-12 !mt-0 !top-1/2 !right-4 bg-black/30 rounded-full backdrop-blur-sm hover:bg-black/50 transition-colors"></div>
             </Swiper>

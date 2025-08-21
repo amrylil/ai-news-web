@@ -18,7 +18,7 @@ const TrendingPage = () => {
   }
 
   return (
-    <div className="bg-slate-900 text-white min-h-screen">
+    <div className="bg-slate-50 text-slate-950 min-h-screen">
       <main className="max-w-7xl mx-auto p-4 md:p-6">
         <div className="mb-8">
           <h1 className="text-4xl font-bold">Trending News</h1>

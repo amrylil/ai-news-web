@@ -1,9 +1,6 @@
-// src/components/news/NewsCard.jsx
-
 import { Link } from "react-router-dom";
-import { useSaved } from "../../context/SavedArticlesContext"; // Import the save hook
+import { useSaved } from "../../context/SavedArticlesContext";
 
-// Bookmark Icon SVG
 const BookmarkIcon = ({ saved }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

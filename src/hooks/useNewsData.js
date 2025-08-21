@@ -1,5 +1,3 @@
-// src/hooks/useNewsData.js
-
 import { useState, useEffect, useCallback } from "react";
 import { fetchAllNews } from "../services";
 
@@ -10,8 +8,8 @@ export const useNewsData = () => {
 
   const searchNews = useCallback(async (keyword) => {
     try {
-      setLoading(true); // Start loading
-      setError(null); // Reset previous errors
+      setLoading(true);
+      setError(null);
       const data = await fetchAllNews(keyword);
       setArticles(data);
     } catch (err) {
@@ -19,9 +17,9 @@ export const useNewsData = () => {
       setError(
         "An error occurred while fetching the news. Please try again later."
       );
-      setArticles([]); // Clear articles on error
+      setArticles([]);
     } finally {
-      setLoading(false); // Stop loading, regardless of success or failure
+      setLoading(false);
     }
   }, []);
 

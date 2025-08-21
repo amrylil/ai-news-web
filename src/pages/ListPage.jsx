@@ -1,35 +1,29 @@
-// src/pages/ListPage.jsx
-
 import React, { useState, useMemo, useEffect } from "react";
 import { useParams, useOutletContext, Link } from "react-router-dom";
 import Pagination from "../components/ui/Pagination";
 import NewsCard from "../components/ui/Card";
 
-const ITEMS_PER_PAGE = 12; // Atur berapa berita yang ditampilkan per halaman
+const ITEMS_PER_PAGE = 12;
 
 const ListPage = () => {
-  const { query } = useParams(); // Ambil query pencarian dari URL jika ada
+  const { query } = useParams();
   const { articles, loading, error } = useOutletContext();
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Filter artikel berdasarkan query pencarian, atau gunakan semua artikel
   const filteredArticles = useMemo(() => {
-    if (!query) return articles; // Jika tidak ada query, tampilkan semua
+    if (!query) return articles;
     return articles.filter((article) =>
       article.title.toLowerCase().includes(query.toLowerCase())
     );
   }, [articles, query]);
 
-  // Hitung total halaman
   const totalPages = Math.ceil(filteredArticles.length / ITEMS_PER_PAGE);
 
-  // Ambil artikel untuk halaman saat ini
   const currentArticles = filteredArticles.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
   );
 
-  // Reset ke halaman 1 setiap kali query berubah
   useEffect(() => {
     setCurrentPage(1);
   }, [query]);
@@ -44,7 +38,7 @@ const ListPage = () => {
   }
 
   return (
-    <div className="bg-slate-900 text-white min-h-screen">
+    <div className="bg-slate-50 text-slate-950 min-h-screen">
       <main className="max-w-7xl mx-auto p-4 md:p-6">
         <div className="mb-8">
           <h1 className="text-4xl font-bold mt-2">

@@ -1,5 +1,3 @@
-// src/services/api/guardianApiService.js
-
 const GUARDIAN_KEY = "17271594-6aab-4612-87ff-4f9155717347";
 
 const normalizeTheGuardian = (results = []) => {
@@ -19,7 +17,6 @@ export const fetchFromTheGuardian = async (keyword) => {
       `https://content.guardianapis.com/search?q=${keyword}&api-key=${GUARDIAN_KEY}`
     );
     const data = await response.json();
-    console.log("guardian api : ", data);
     if (data.response.status !== "ok")
       throw new Error("Failed to fetch from The Guardian");
     return normalizeTheGuardian(data.response.results);
